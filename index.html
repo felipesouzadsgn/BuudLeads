@@ -1,74 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BUUDLEADS CRM</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: "#00BFFF",
-              "primary-hover": "#009ACD",
-              "background-dark": "#111217",
-              "surface-dark": "#1C1D24",
-              "text-muted": "#A9AAB2",
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.5s ease-in-out',
-              'slide-up': 'slideUp 0.5s ease-out',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { transform: 'translateY(20px)', opacity: '0' },
-                '100%': { transform: 'translateY(0)', opacity: '1' },
-              },
-            }
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUUDLEADS CRM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: "rgb(var(--color-primary) / <alpha-value>)",
+            "primary-hover": "rgb(var(--color-primary-hover) / <alpha-value>)",
+            background: "rgb(var(--color-background) / <alpha-value>)",
+            surface: "rgb(var(--color-surface) / <alpha-value>)",
+            main: "rgb(var(--color-text-main) / <alpha-value>)",
+            muted: "rgb(var(--color-text-muted) / <alpha-value>)",
+            // Legacy mappings for compatibility during refactor
+            "background-dark": "rgb(var(--color-background) / <alpha-value>)",
+            "surface-dark": "rgb(var(--color-surface) / <alpha-value>)",
+            "text-muted": "rgb(var(--color-text-muted) / <alpha-value>)",
           },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+          }
         },
-      }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-color: #111217;
-        color: white;
-        font-family: 'Inter', sans-serif;
-      }
-      .glow-effect {
-        box-shadow: 0 0 40px -10px rgba(0, 191, 255, 0.3);
-      }
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #111217;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #2d2e36;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #00BFFF;
-      }
-    </style>
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: 0 191 255;
+      /* #00BFFF */
+      --color-primary-hover: 0 154 205;
+      /* #009ACD */
+      --color-background: 249 250 251;
+      /* #F9FAFB (Gray 50) */
+      --color-surface: 255 255 255;
+      /* #FFFFFF */
+      --color-text-main: 17 24 39;
+      /* #111827 (Gray 900) */
+      --color-text-muted: 107 114 128;
+      /* #6B7280 (Gray 500) */
+    }
+
+    .dark {
+      --color-primary: 0 191 255;
+      /* #00BFFF */
+      --color-primary-hover: 0 154 205;
+      /* #009ACD */
+      --color-background: 17 18 23;
+      /* #111217 */
+      --color-surface: 28 29 36;
+      /* #1C1D24 */
+      --color-text-main: 255 255 255;
+      /* #FFFFFF */
+      --color-text-muted: 169 170 178;
+      /* #A9AAB2 */
+    }
+
+    body {
+      background-color: rgb(var(--color-background));
+      color: rgb(var(--color-text-main));
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .glow-effect {
+      box-shadow: 0 0 40px -10px rgba(0, 191, 255, 0.3);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgb(var(--color-background));
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2d2e36;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00BFFF;
+    }
+  </style>
 
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
